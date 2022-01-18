@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Leader Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <video class="background-video" src="images/back.mp4" autoplay loop playsinline muted></video>
+    <nav class="navbar navbar-light justify-content-center">
+        <a class="navbar-brand text-white" href="#">Political Leader Classifier</a>
+    </nav>
+
+    <div class="container text-white py-5">
+        <div class="row">
+            <div class="col" data-player="imran_khan">
+                <div class="border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/imran.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="text-uppercase card-title">Imran Khan</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-player="joe_bieden">
+                <div class="border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/bieden.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="text-uppercase card-title">Joe Bieden</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-player="momota_banerjee">
+                <div class="border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/mamata.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="text-uppercase card-title">Momota Banerjee</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" data-player="sheikh_hasina">
+                <div class="border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/hasina.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="text-uppercase card-title">Sheikh Hasina</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" data-player="vladimir_putin">
+                <div class="border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/putin.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="text-uppercase card-title">Vladimir Putin</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row py-3">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/upload.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick">Drop files here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3 mx-auto">
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8 error text-warning" id="error">
+                <p><b>Can't classify image. Classifier was not able to detect face and two eyes properly</b></p>
+            </div>
+
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+            
+            <div class="col-sm-4" id="divClassTable">
+                <table id="classTable" class="table table-striped text-white text-center table-bordered">
+                    <thead class='bg-success'>
+                        <tr>
+                            <th>Player</th>
+                            <th>Probability Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Imran Khan</td>
+                            <td id="score_imran_khan"></td>
+                        </tr>
+                        <tr>
+                            <td>Joe Biden</td>
+                            <td id="score_joe_biden"></td>
+                        </tr>
+                        <tr>
+                            <td>Momota Banerjee</td>
+                            <td id="score_momota_banerjee"></td>
+                        </tr>
+                        <tr>
+                            <td>Sheikh Hasina</td>
+                            <td id="score_sheikh_hasina"></td>
+                        </tr>
+                        <tr>
+                            <td>Vladimir Putin</td>
+                            <td id="score_vladimir_putin"></td>
+                        </tr>
+                    <tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+
+</html>
